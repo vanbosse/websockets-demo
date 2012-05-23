@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Websockets</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/screen.css" />
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="messages">
+		</div>
+		<div class="users">
+		</div>
+		<form id="send" action="index.html" method="post">
+			<p>
+				<input type="text" name="message" id="message" />
+				<input type="submit" name="send" value="send" class="button" />
+			</p>
+		</form>
+	</div>
+
+	<script type="text/javascript" src="http://localhost:8080/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="js/client.js"></script>
+</body>
+</html>
