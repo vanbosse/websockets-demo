@@ -1,0 +1,71 @@
+/*
+	Styles for websockets chat.
+
+	@author: Jeroen Van den Bossche <jeroen@vanbosse.be>
+*/
+
+body {
+	position: relative;
+	background: none repeat scroll 0 0 #3d3d3d;
+	width: 960px;
+	margin: 0 auto;
+}
+
+body, input {
+	font-family: Menlo, Monaco, Helvetica, Arial;
+	font-size: 12px;
+}
+
+.wrapper {
+	background: none repeat scroll 0 0 #e9eaee;
+	padding: 15px;
+	margin: 50px  0 0 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 5px 5px 5px #000;
+	-webkit-box-shadow: 5px 5px 5px #000;
+	box-shadow: 5px 5px 5px #000;
+}
+
+.messages {
+	background: none repeat scroll 0 0 #fff;
+	width: 745px;
+	float: left;
+	border: 1px solid #000;
+	min-height: 400px;
+}
+
+.users {
+	background: none repeat scroll 0 0 #fff;
+	width: 180px;
+	float: left;
+	border-right: 1px solid #000;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	min-height: 400px;
+}
+
+.green {
+	color: #00cc00;
+}
+
+.red {
+	color: #990000;
+}
+
+#send p {
+	padding: 5px 0 0 0;
+	clear: both;
+}
+
+input[type='text'] {
+	width: 846px;
+	height: 30px;
+	font-size: 15px;
+}
+
+input[type='submit'], .button {
+	width: 70px;
+	height: 38px;
+}
