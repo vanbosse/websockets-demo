@@ -38,6 +38,11 @@ io.sockets.on('connection', function(socket) {
 	// send a message to alert other sockets.
 	socket.on('disconnect', function() {
 		socket.get('nickname', function(error, nickname) {
+			var index = users.indexOf(nickname);
+			if(index != -1)
+			{
+				users.splice(index, 1);
+			}
 			io.sockets.emit('user disconnected', nickname);
 		});
 	});

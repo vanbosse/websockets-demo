@@ -23,17 +23,18 @@ socket.on('message', function(message) {
 // register a handler to receive new connected users.
 socket.on('user connected', function(nickname) {
 	messages.innerHTML += '<p class="green">' + nickname + ' is connected.</p>';
-	users.innerHTML += '<p>' + nickname + '</p>';
+	users.innerHTML += '<p id="' + nickname + '">' + nickname + '</p>';
 });
 
 // register a handler to receive disconnected users.
 socket.on('user disconnected', function(nickname) {
 	messages.innerHTML += '<p class="red">' + nickname + ' is disconnected.</p>';
+	users.removeChild(document.querySelector('#' + nickname));
 });
 
 // register the handler to receive all connected users.
 socket.on('user', function(nickname) {
-	users.innerHTML += '<p>' + nickname + '</p>';
+	users.innerHTML += '<p id="' + nickname + '">' + nickname + '</p>';
 });
 
 // register handler for submission of the form.
