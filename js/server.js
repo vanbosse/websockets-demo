@@ -1,7 +1,7 @@
 /**
  * The server!
  *
- * @author Jeroen Van den Bossche <jeroen@vanbosse.be>
+ * @author Jeroen Van den Bossche <vanbosse.jeroen@gmail.com>
  */
 
 var io = require('socket.io').listen(8080);
