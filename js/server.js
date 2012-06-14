@@ -10,17 +10,16 @@ var users = [];
 // a socket got connected.
 io.sockets.on('connection', function(socket) {
 
-	// when a socket connects,
-	// send them all connected users.
-	users.forEach(function(nickname) {
-		socket.emit('user', nickname);
-	});
-
 	// when a socket is connected and sends the "register nickname" event,
-	// we set the nickname to the socket
+	// we send the user all connected sockets,
+	// set the nickname to the socket
 	// and send a connected message to all sockets.
 	socket.on('register nickname', function(nickname) {
 		socket.set('nickname', nickname, function() {
+			users.forEach(function(nickname) {
+				socket.emit('user', nickname);
+			});
+
 			users.push(nickname);
 			io.sockets.emit('user connected', nickname);
 		});
