@@ -2,7 +2,7 @@
 
 Clone the repository.
 
-	git clone git://github.com/Vanbosse/websockets-demo.git
+	git clone git://github.com/vanbosse/websockets-demo.git
 
 Install node.js, get a copy at http://nodejs.org and install Socket.io
 
