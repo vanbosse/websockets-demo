@@ -54,5 +54,6 @@ window.onload = function()
 		evt.preventDefault();
 		socket.emit('message', input.value);
 		input.value = '';
+		messages.scrollTop = messages.scrollHeight;
 	}
 };

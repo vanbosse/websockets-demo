@@ -31,7 +31,8 @@ body, input {
     padding: 20px;
     float: left;
     border: 1px solid #ddd;
-    min-height: 400px;
+    height: 400px;
+    overflow: scroll;
 }
 
 span.input {
