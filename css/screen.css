@@ -1,71 +1,123 @@
 /*
-	Styles for websockets chat.
+    Styles for websockets chat.
 
-	@author: Jeroen Van den Bossche <jeroen@vanbosse.be>
+    @author: Jeroen Van den Bossche <jeroen@vanbosse.be>
 */
 
 body {
-	position: relative;
-	background: none repeat scroll 0 0 #3d3d3d;
-	width: 960px;
-	margin: 0 auto;
+    position: relative;
+    background: #414f59;
+    width: 960px;
+    margin: 0 auto;
 }
 
 body, input {
-	font-family: Menlo, Monaco, Helvetica, Arial;
-	font-size: 12px;
+    font-family: Menlo, Monaco, Helvetica, Arial;
+    font-size: 12px;
 }
 
 .wrapper {
-	background: none repeat scroll 0 0 #e9eaee;
-	padding: 15px;
-	margin: 50px  0 0 0;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	-moz-box-shadow: 5px 5px 5px #000;
-	-webkit-box-shadow: 5px 5px 5px #000;
-	box-shadow: 5px 5px 5px #000;
+    background: #fff;
+    padding: 15px 15px 0 15px;
+    margin: 50px  0 0 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
 
 .messages {
-	background: none repeat scroll 0 0 #fff;
-	width: 745px;
-	float: left;
-	border: 1px solid #000;
-	min-height: 400px;
+    background: none repeat scroll 0 0 #fff;
+    width: 690px;
+    padding: 20px;
+    float: left;
+    border: 1px solid #ddd;
+    min-height: 400px;
+}
+
+span.input {
+    background: #e0e9eb;
+    display: block;
+    margin: 10px -15px 0 -15px;
+    padding: 15px;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
 }
 
 .users {
-	background: none repeat scroll 0 0 #fff;
-	width: 180px;
-	float: left;
-	border-right: 1px solid #000;
-	border-top: 1px solid #000;
-	border-bottom: 1px solid #000;
-	min-height: 400px;
+    background: none repeat scroll 0 0 #fff;
+    width: 140px;
+    padding: 20px;
+    float: right;
+    border: 1px solid #ddd;
+    min-height: 400px;
 }
 
 .green {
-	color: #00cc00;
+    color: #00cc00;
 }
 
 .red {
-	color: #990000;
+    color: #990000;
 }
 
 #send p {
-	padding: 5px 0 0 0;
-	clear: both;
+    padding: 5px 0 0 0;
+    clear: both;
 }
 
 input[type='text'] {
-	width: 846px;
-	height: 30px;
-	font-size: 15px;
+    width: 811px;
+    height: 30px;
+    font-size: 15px;
+    padding: 6px 10px;
 }
 
-input[type='submit'], .button {
-	width: 70px;
-	height: 38px;
+.btn-primary, .hs-button.primary {
+    -webkit-font-smoothing: antialiased !important;
+    cursor:pointer !important;
+    -moz-user-select:none !important;
+    -webkit-user-select:none !important;
+    -o-user-select:none !important;
+    user-select:none !important;
+    display:inline-block !important;
+    text-align:center !important;
+    text-decoration:none !important;
+    width:auto !important;
+    height:auto !important;
+    font-family:Helvetica, sans-serif !important;
+    border-radius:2px !important;
+    -webkit-border-radius:2px !important;
+    -moz-border-radius:2px !important;
+    background-color:#3bb9bb !important;
+    background-image:-webkit-linear-gradient(top, #50ccce, #30a4a6) !important;
+    background-image :-moz-linear-gradient(top, #50ccce, #30a4a6) !important;
+    color:#fff !important;
+    text-shadow: 0px -1px #30a4a6 !important;
+    padding:4px 20px !important;
+    font-size:18px !important;
+    line-height:36px !important;
+    font-weight: 500;
+    border: 1px solid #25989a;
+    outline: none;
+}
+.btn-primary:hover, .hs-button.primary:hover {
+    background-color:#3bb9bb !important;
+    background-image:-webkit-linear-gradient(top, #66e3e5, #3eb5b7) !important;
+    background-image :-moz-linear-gradient(top, #66e3e5, #3eb5b7) !important;
+    color:#fff !important;
+    border: 1px solid #25989a;
+}
+.btn-primary:active,
+.hs-button.primary:active
+.btn-primary:active:hover,
+.hs-button.primary:active:hover {
+    background-color:#3bb9bb !important;
+    background-image:-webkit-linear-gradient(top, #30a4a6, #50ccce) !important;
+    background-image :-moz-linear-gradient(top, #30a4a6, #50ccce) !important;
+    box-shadow:inset 0px 1px 10px rgba(0, 0, 0, 0.5) !important;
+    -webkit-box-shadow:inset 1px 1px 5px rgba(0, 0, 0, 0.25) !important;
+    -moz-box-shadow:inset 1px 1px 5px rgba(0, 0, 0, 0.25) !important;
+    color:#fff !important;
+    border: 1px solid #25989a;
 }
