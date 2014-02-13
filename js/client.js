@@ -7,11 +7,15 @@
 window.onload = function()
 {
 	var socket = io.connect('http://localhost:8080');
-	var nick = window.prompt('Nickname:');
 	var form = document.querySelector('#send');
 	var input = document.querySelector('#message');
 	var messages = document.querySelector('.messages');
 	var users = document.querySelector('.users');
+    var nick = null;
+    while (!nick) {
+        nick = window.prompt('Nickname:').trim();
+    }
+    input.focus();
 
 	// send nickname to server.
 	socket.emit('register nickname', nick);
