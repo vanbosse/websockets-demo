@@ -6,43 +6,43 @@
 
 window.onload = function()
 {
-	var socket = io.connect('http://localhost:8080');
-	var form = document.querySelector('#send');
-	var input = document.querySelector('#message');
-	var messages = document.querySelector('.messages');
-	var users = document.querySelector('.users');
+    var socket = io.connect('http://localhost:8080');
+    var form = document.querySelector('#send');
+    var input = document.querySelector('#message');
+    var messages = document.querySelector('.messages');
+    var users = document.querySelector('.users');
     var nick = null;
     while (!nick) {
         nick = window.prompt('Nickname:').trim();
     }
     input.focus();
 
-	// send nickname to server.
-	socket.emit('register nickname', nick);
+    // send nickname to server.
+    socket.emit('register nickname', nick);
 
-	// register handler to receive messages.
-	socket.on('message', function(message) {
-		var output = '<p>' + getTime() + ' &lt;' + message.nickname + '&gt; ' + message.message;
-		messages.innerHTML += output;
-		messages.scrollTop = messages.scrollHeight;
-	});
+    // register handler to receive messages.
+    socket.on('message', function(message) {
+        var output = '<p>' + getTime() + ' &lt;' + message.nickname + '&gt; ' + message.message;
+        messages.innerHTML += output;
+        messages.scrollTop = messages.scrollHeight;
+    });
 
-	// register a handler to receive new connected users.
-	socket.on('user connected', function(nickname) {
-		messages.innerHTML += '<p class="green">' + getTime() + ' ' + nickname + ' is connected.</p>';
-		users.innerHTML += '<p id="' + nickname + '">' + nickname + '</p>';
-	});
+    // register a handler to receive new connected users.
+    socket.on('user connected', function(nickname) {
+        messages.innerHTML += '<p class="green">' + getTime() + ' ' + nickname + ' is connected.</p>';
+        users.innerHTML += '<p id="' + nickname + '">' + nickname + '</p>';
+    });
 
-	// register a handler to receive disconnected users.
-	socket.on('user disconnected', function(nickname) {
-		messages.innerHTML += '<p class="red">' + getTime() + ' ' + nickname + ' is disconnected.</p>';
-		users.removeChild(document.querySelector('#' + nickname));
-	});
+    // register a handler to receive disconnected users.
+    socket.on('user disconnected', function(nickname) {
+        messages.innerHTML += '<p class="red">' + getTime() + ' ' + nickname + ' is disconnected.</p>';
+        users.removeChild(document.querySelector('#' + nickname));
+    });
 
-	// register the handler to receive all connected users.
-	socket.on('user', function(nickname) {
-		users.innerHTML += '<p id="' + nickname + '">' + nickname + '</p>';
-	});
+    // register the handler to receive all connected users.
+    socket.on('user', function(nickname) {
+        users.innerHTML += '<p id="' + nickname + '">' + nickname + '</p>';
+    });
 
     getTime = function() {
         var date = new Date();
@@ -52,11 +52,11 @@ window.onload = function()
         return hours + ":" + minutes + ":" + seconds;
     }
 
-	// register handler for submission of the form.
-	form.onsubmit = function(evt)
-	{
-		evt.preventDefault();
-		socket.emit('message', input.value);
-		input.value = '';
-	}
+    // register handler for submission of the form.
+    form.onsubmit = function(evt)
+    {
+        evt.preventDefault();
+        socket.emit('message', input.value);
+        input.value = '';
+    }
 };
