@@ -24,6 +24,7 @@ window.onload = function()
 	socket.on('message', function(message) {
 		var output = '<p>' + getTime() + ' &lt;' + message.nickname + '&gt; ' + message.message;
 		messages.innerHTML += output;
+		messages.scrollTop = messages.scrollHeight;
 	});
 
 	// register a handler to receive new connected users.
@@ -45,7 +46,10 @@ window.onload = function()
 
     getTime = function() {
         var date = new Date();
-        return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        var hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+        var minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+        var seconds = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+        return hours + ":" + minutes + ":" + seconds;
     }
 
 	// register handler for submission of the form.
@@ -54,6 +58,5 @@ window.onload = function()
 		evt.preventDefault();
 		socket.emit('message', input.value);
 		input.value = '';
-		messages.scrollTop = messages.scrollHeight;
 	}
 };
